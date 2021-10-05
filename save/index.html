@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+
+<head>
+  <title>ANBD World</title>
+
+<body background="{{ url_for('static',filename='images/anbd-back.png')  }}"></body>
+<style>
+  body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 20%;
+  }
+</style>
+
+</head>
+
+<body>
+  <center>
+    <h1>ANBD World</h1>
+    <img src="{{ url_for('static',filename='images/anbd.png') }}" , width="100" <br><br>
+    <hr width="100%" color="black" />
+  </center>
+</body>
+
+<body>
+
+  <button class="btn01"
+    onclick="document.getElementById('hiddenContent01').style.display=(document.getElementById('hiddenContent01').style.display=='block') ? 'none' : 'block';"><input
+      type="image" value="버튼 표시 텍스트" src="{{ url_for('static',filename='images/jenkins.png') }}" , width="50"
+      ) /></button>
+  <div id="hiddenContent01" class="example01" style="display: block;">
+    <form action="/result" method="POST">
+      <table>
+        <caption> Jenkins </caption>
+        <tr>
+          <td><input type="text" name="name" value="jenkins" hidden /></td>
+        </tr>
+        <tr>
+          <td>url</td>
+          <td><input type="text" name="url" /></td>
+        </tr>
+        <tr>
+          <td>username</td>
+          <td><input type="text" name="username" /></td>
+        </tr>
+        <tr>
+          <td>password</td>
+          <td><input type="text" name="password" /></td>
+        </tr>
+      </table>
+      <p><input type="submit" value="제출" onclick="alert('제출 완료!')" /></p>
+    </form>
+  </div>
+
+  <button class="btn02"
+    onclick="document.getElementById('hiddenContent02').style.display=(document.getElementById('hiddenContent02').style.display=='block') ? 'none' : 'block';"><input
+      type="image" value="버튼 표시 텍스트" src="{{ url_for('static',filename='images/github.png') }}" , width="50"
+      ) /></button>
+  <div id="hiddenContent02" class="example02" style="display: block;">
+    <form action="http://15.164.215.143:5500/result" method="POST">
+      <table>
+        <caption> Github </caption>
+        <tr>
+          <td>url</td>
+          <td><input type="text" name="github_url" /></td>
+        </tr>
+        <tr>
+          <td>username</td>
+          <td><input type="text" name="github_username" /></td>
+        </tr>
+        <tr>
+          <td>reponame</td>
+          <td><input type="text" name="github_reponame" /></td>
+        </tr>
+        <tr>
+          <td>token</td>
+          <td><input type="text" name="github_token" /></td>
+        </tr>
+        <tr>
+          <td>credential_id</td>
+          <td><input type="text" name="github_credential_id" /></td>
+        </tr>
+        <tr>
+          <td>credential_description</td>
+          <td><input type="text" name="github_credential_description" /></td>
+        </tr>
+        <tr>
+          <td>webhook_events</td>
+          <td><input type='checkbox' name='github_webhook_events' value='push' onclick='getCheckboxValue()' /> push</td>
+          <td><input type='checkbox' name='github_webhook_events' value='pull_request' onclick='getCheckboxValue()' /> pull_request</td>
+        </tr>
+        <tr>
+          <td>contenttype</td>
+          <td><input type="text" name="github_contenttype\" value='json' /></td>
+        </tr>
+        <tr>
+          <td>active</td>
+          <td><input type='checkbox' name='active' value='true' />true</td>
+          <td><input type='checkbox' name='active' value='false' />false</td>
+        </tr>
+      </table>
+      <p><input type="submit" value="제출" onclick="alert('제출 완료!')" /></p>
+    </form>
+  </div>
+
+</body>
+
+</html>
